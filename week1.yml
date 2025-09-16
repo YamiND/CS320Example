@@ -1,0 +1,18 @@
+- name: First play
+  hosts: cs320
+  tasks:
+    - name: First Task to do
+      ansible.builtin.ping:
+
+    - name: Second task output message
+      ansible.builtin.debug:
+        msg: This should output to my screen
+
+    - name: Number 3 get Linux Distro Family
+      ansible.builtin.debug:
+        var: ansible_facts['distribution_file_variety']
+
+
+    - name: Show all facts
+      ansible.builtin.debug:
+        var: ansible_facts['devices']['vda']['partitions']['vda2']['size']
